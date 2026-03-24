@@ -18,7 +18,7 @@ const education: EducationItems[] = [
         title: "Bachelor of Science in Computer Science (Engineering)",
         company: "Polish-Japanese Academy of Information Technology (PJAIT)",
         description:
-            "Currently pursuing a B.Sc. in Computer Science with a specialization in Software Engineering. My academic journey at PJAIT is centered on mastering the lifecycle of scalable systems—from low-level memory management and algorithmic efficiency to modern cloud-native architectures. I focus on bridging the gap between theoretical computer science and practical, robust engineering solutions.",
+            "Currently pursuing a B.Sc. in Computer Science with a specialization in Software Engineering. My academic journey at PJAIT is centered on mastering the lifecycle of scalable systems - from low-level memory management and algorithmic efficiency to modern cloud-native architectures. I focus on bridging the gap between theoretical computer science and practical, robust engineering solutions.",
         technologies: ["Java", "C++", "SQL","Linux","Docker","Git","Bash","Design Patterns","Algorithms & Data Structures", "Relational Databases"],
     },
 
@@ -35,7 +35,7 @@ export function EducationSection() {
     return (
         <section id="education" className="py-24">
             <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-foreground">
-                Experience
+                Education
             </h2>
 
             <div className="space-y-12">
