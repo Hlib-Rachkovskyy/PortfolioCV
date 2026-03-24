@@ -46,7 +46,7 @@ export function ContactSection() {
         Contact
       </h2>
 
-      <div className="grid gap-12 lg:grid-cols-2">
+      <div className="grid gap-12">
         <div className="space-y-6">
           <p className="text-lg leading-relaxed text-muted-foreground">
             If you would like to discuss a research collaboration, project
