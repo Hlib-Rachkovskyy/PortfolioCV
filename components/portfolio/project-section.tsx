@@ -28,7 +28,7 @@ const otherProjects: OtherProject[] = [
     description:
         "Designed and developed a high-performance, responsive digital hub to showcase my freelance engineering projects and academic activity.",
     technologies: ["React", "Tailwind", "Typescript"],
-    link: "example.com",
+    link: "https://github.com/Hlib-Rachkovskyy/PortfolioCV",
     stars: 0,
     forks: 0,
   }
