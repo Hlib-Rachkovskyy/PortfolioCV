@@ -3,6 +3,13 @@
 Welcome to the project! This guide will walk you through running mines profile website.
 
 ---
+
+## Access Hosted Version
+
+```url
+https://portfolio-cv-eta-liard.vercel.app/
+```
+
 ## Starting the Application locally
 
 ### 1. Start the Frontend (React)
