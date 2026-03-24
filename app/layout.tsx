@@ -7,15 +7,15 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Portfolio | Researcher & Developer',
-  description: 'Personal portfolio showcasing research, experience, publications, and projects in machine learning and software development.',
+  description: 'Personal portfolio showcasing research, experience, and projects in software development.',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/light-icon.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/light-icon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
