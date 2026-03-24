@@ -114,11 +114,6 @@ export function ContactSection() {
         </div>
       </div>
 
-      <footer className="mt-24 border-t border-border pt-8">
-        <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
-        </p>
-      </footer>
     </section>
   );
 }

@@ -28,7 +28,7 @@ export function Footer() {
       <div className="mx-auto max-w-3xl px-6 lg:px-12">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            {new Date().getFullYear()} Portfolio. All rights reserved.
+            {new Date().getFullYear()} Hlib Rachkovskyy Portfolio. All rights reserved.
           </p>
 
           <div className="flex items-center gap-2 rounded-full bg-secondary px-4 py-2">
