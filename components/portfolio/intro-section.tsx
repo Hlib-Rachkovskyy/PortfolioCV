@@ -38,13 +38,8 @@ export function IntroSection() {
           </p>
 
           <p className="leading-relaxed text-muted-foreground">
-            I have a strong passion for clean code, query optimization,
-            and mentoring others. When I'm not writing{" "}
-              <span className="font-medium text-foreground">
-              SQL
-          </span>{" "}
-            or designing system
-            architectures, you can find me leveling up my cloud skills and
+            I have a strong passion for agentic coding, query optimization,
+            and mentoring others. Now in my free time you can find me leveling up my cloud skills and
             mastering{" "}
             <span className="font-medium text-foreground">
       Azure
