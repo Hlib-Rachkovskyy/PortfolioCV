@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 // 1. Initialize the clean, modern Inter font
@@ -37,6 +38,7 @@ export default function RootLayout({
       {/* 2. Apply the font directly to your body tag */}
       <body className={`${inter.className} antialiased`}>
       {children}
+      <Analytics />
       </body>
       </html>
   )
