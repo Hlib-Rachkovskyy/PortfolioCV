@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Copy, Mail } from "lucide-react";
+import { Download, Copy } from "lucide-react";
 import { toast } from "sonner";
 
 export function IntroSection() {
@@ -11,56 +11,43 @@ export function IntroSection() {
   };
 
   return (
-      <section id="about" className="min-h-[70vh] py-24 flex flex-col justify-center">
-        <div className="space-y-6 text-lg">
-            <p className="leading-relaxed text-muted-foreground">
-                Welcome! I'm a {" "}
-                <span className="font-medium text-foreground">
-                    Software Developer
-                </span>{" "}
-                with a major in{" "}
-                <span className="font-medium text-foreground">
-                Databases
-                </span>
-                .
-                While I officially graduate in{" "}
-                    <span className="font-medium text-foreground">
-                2026
-                </span>
-                , I have
-                already completed my core coursework and am fully ready for the industry. My primary focus is on{" "}
-                    <span className="font-medium text-primary">
-                    full-stack engineering
-                </span>{" and "}
-                    <span className="font-medium text-primary">
-      cloud computing
-    </span>.
-            </p>
+    <section id="about" className="relative min-h-[80vh] py-32 flex flex-col justify-center">
+      <div className="absolute -left-12 top-32 hidden lg:block">
+        <span className="text-8xl font-serif text-primary/5 select-none">01</span>
+      </div>
+      
+      <div className="space-y-12">
+        <h2 className="text-6xl lg:text-8xl font-serif leading-[0.9] tracking-tight text-foreground">
+          Engineering <br />
+          <span className="text-primary italic">Systems</span> with <br />
+          Precision.
+        </h2>
 
-            <p className="leading-relaxed text-muted-foreground">
-            I thrive across the entire software lifecycle-from engineering scalable web apps to leading complex projects
-            using{" "}
-            <span className="font-medium text-foreground">
-      Java
-    </span>{" and "}
-            <span className="font-medium text-foreground">
-      React
-    </span>.
+        <div className="max-w-xl space-y-6 text-lg lg:text-xl leading-relaxed text-muted-foreground font-sans">
+          <p>
+            I am a <span className="text-foreground font-medium">Software Developer</span> specializing in 
+            Databases and Cloud Architectures. I build high-integrity systems that 
+            bridge the gap between academic research and industrial scale.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Button asChild size="lg" className="h-12 px-8">
-              <a href="/Hlib_Rachkovskyy_CV.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
+          <p>
+            Currently focused on <span className="text-primary font-medium underline decoration-primary/30 underline-offset-4">Full-Stack Engineering</span> using Java, React, and modern cloud primitives.
+          </p>
+
+          <div className="flex flex-wrap gap-6 pt-8">
+            <Button asChild size="lg" className="h-14 px-10 bg-primary text-primary-foreground hover:scale-[1.02] transition-transform rounded-none font-sans uppercase tracking-widest text-xs">
+              <a href="/Hlib_Rachkovskyy_CV.pdf" target="_blank">
+                <Download className="mr-3 h-4 w-4" />
+                Get Resume
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="h-12 px-8" onClick={copyEmail}>
-              <Copy className="mr-2 h-5 w-5" />
+            <Button variant="outline" size="lg" className="h-14 px-10 border-muted-foreground/20 hover:border-primary hover:bg-transparent hover:text-primary transition-all rounded-none font-sans uppercase tracking-widest text-xs" onClick={copyEmail}>
+              <Copy className="mr-3 h-4 w-4" />
               Copy Email
             </Button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
   );
 }

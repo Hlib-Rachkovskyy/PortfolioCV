@@ -8,6 +8,7 @@ import { ProjectSection } from "@/components/portfolio/project-section";
 import { ContactSection } from "@/components/portfolio/contact-section";
 import { Footer } from "@/components/portfolio/footer";
 import {EducationSection} from "@/components/portfolio/education-section";
+import { FadeInSection } from "@/components/ui/fade-in";
 
 export default function PortfolioPage() {
   return (
@@ -17,12 +18,29 @@ export default function PortfolioPage() {
 
       <main className="lg:ml-64">
         <div className="mx-auto max-w-3xl px-6 py-12 lg:px-12">
-          <IntroSection />
+          <FadeInSection>
+            <IntroSection />
+          </FadeInSection>
+          
+          <FadeInSection delay={100}>
             <EducationSection />
-          <ExperienceSection />
-          <AcademicSection />
-          <ProjectSection />
-          <ContactSection />
+          </FadeInSection>
+          
+          <FadeInSection delay={100}>
+            <ExperienceSection />
+          </FadeInSection>
+          
+          <FadeInSection delay={100}>
+            <AcademicSection />
+          </FadeInSection>
+          
+          <FadeInSection delay={100}>
+            <ProjectSection />
+          </FadeInSection>
+          
+          <FadeInSection delay={100}>
+            <ContactSection />
+          </FadeInSection>
         </div>
 
         <Footer />

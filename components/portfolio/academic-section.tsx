@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, ChevronDown } from "lucide-react";
+import { ExternalLink, ChevronDown, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface AcademicItem {
@@ -16,54 +16,51 @@ const academicActivity: AcademicItem[] = [
   {
     title: "Engineering Thesis",
     description:
-      "[Title Hidden until Defense] – Researching and implementing " +
-        "a Social Media type of system focused on the implementation of geographic information systems (GIS).",
-    area: "Software Engineering and Database Systems",
+      "[Title Hidden until Defense] – Researching and implementing a Social Media type of system focused on the implementation of geographic information systems (GIS).",
+    area: "Software Engineering & Database Systems",
     status: "completed",
     link: "https://example.com",
   },
 ];
 
-const INITIAL_COUNT = 4;
-
 export function AcademicSection() {
-  const [showAll, setShowAll] = useState(false);
-  
-  const visibleProjects = showAll ? academicActivity : academicActivity.slice(0, INITIAL_COUNT);
-  const hasMore = academicActivity.length > INITIAL_COUNT;
-
   return (
-    <section id="academic" className="py-24">
-      <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-foreground">
-        Academic Activity
-      </h2>
+    <section id="academic" className="relative py-24 border-t border-border/40">
+      <div className="absolute -left-12 top-24 hidden lg:block">
+        <span className="text-8xl font-serif text-primary/5 select-none">04</span>
+      </div>
 
-      <div className="space-y-8">
-        {visibleProjects.map((project, index) => (
+      <div className="flex items-center gap-4 mb-16">
+        <h2 className="text-xs font-sans uppercase tracking-[0.3em] text-primary font-semibold">
+          Academic Research
+        </h2>
+        <div className="h-px flex-1 bg-border/40" />
+      </div>
+
+      <div className="grid gap-px bg-border/40 border border-border/40">
+        {academicActivity.map((project, index) => (
           <div
             key={index}
-            className="group rounded-lg border border-border bg-card/50 p-6 transition-all hover:border-primary/50 hover:bg-card"
+            className="group relative bg-background p-10 transition-all hover:bg-primary/[0.02]"
           >
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex-1">
-                <div className="mb-2 flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-medium uppercase tracking-wide text-primary">
-                    {project.area}
-                  </span>
-                  <span
-                    className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                      project.status === "ongoing"
-                        ? "bg-primary/20 text-primary"
-                        : "bg-muted text-muted-foreground"
-                    }`}
-                  >
-                    {project.status === "ongoing" ? "Ongoing" : "Completed"}
-                  </span>
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
+              <div className="space-y-6 max-w-xl">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] uppercase tracking-widest text-primary font-bold">
+                      {project.area}
+                    </span>
+                    <span className="h-px w-4 bg-border" />
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">
+                      {project.status}
+                    </span>
+                  </div>
+                  <h3 className="text-4xl font-serif text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
                 </div>
 
-                <h3 className="font-medium text-foreground">{project.title}</h3>
-
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   {project.description}
                 </p>
               </div>
@@ -73,29 +70,15 @@ export function AcademicSection() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                  aria-label={`View ${project.title} project`}
+                  className="inline-flex items-center justify-center h-12 w-12 border border-border/60 rounded-none text-muted-foreground hover:text-primary hover:border-primary transition-all group/link"
                 >
-                  <ExternalLink className="h-5 w-5" />
+                  <ArrowUpRight className="h-5 w-5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
                 </a>
               )}
             </div>
           </div>
         ))}
       </div>
-
-      {hasMore && (
-        <div className="mt-8 flex justify-center">
-          <Button
-            variant="outline"
-            onClick={() => setShowAll(!showAll)}
-            className="gap-2"
-          >
-            {showAll ? "Show Less" : "Load More"}
-            <ChevronDown className={`h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`} />
-          </Button>
-        </div>
-      )}
     </section>
   );
 }

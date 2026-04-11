@@ -14,90 +14,63 @@ interface EducationItems {
 }
 const education: EducationItems[] = [
     {
-        period: "2022 - June 2026 (Expected)",
-        title: "Bachelor of Science in Computer Science (Engineering)",
-        company: "Polish-Japanese Academy of Information Technology (PJAIT)",
+        period: "2022 - 2026 (Expected)",
+        title: "B.Sc. in Computer Science",
+        company: "Polish-Japanese Academy of Information Technology",
         description:
-            "Currently pursuing a B.Sc. in Computer Science with a specialization in Software Engineering. My academic journey at PJAIT is centered on mastering the lifecycle of scalable systems - from low-level memory management and algorithmic efficiency to modern cloud-native architectures. I focus on bridging the gap between theoretical computer science and practical, robust engineering solutions.",
-        technologies: ["Java", "C++", "SQL","Linux","Docker","Git","Bash","Design Patterns","Algorithms & Data Structures", "Relational Databases"],
+            "Pursuing a degree with a focus on Software Engineering and Database Systems. My academic journey is centered on mastering the lifecycle of scalable systems - from low-level memory management to modern cloud-native architectures.",
+        technologies: ["Java", "C++", "SQL", "Docker", "Linux", "Design Patterns", "Data Structures"],
     },
-
 ];
 
-const INITIAL_COUNT = 4;
-
 export function EducationSection() {
-    const [showAll, setShowAll] = useState(false);
-
-    const visibleExperiences = showAll ? education : education.slice(0, INITIAL_COUNT);
-    const hasMore = education.length > INITIAL_COUNT;
-
     return (
-        <section id="education" className="py-24">
-            <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-foreground">
-                Education
-            </h2>
+        <section id="education" className="py-24 border-t border-border/40">
+            <div className="flex items-center gap-4 mb-16">
+                <h2 className="text-xs font-sans uppercase tracking-[0.3em] text-primary font-semibold">
+                    Education
+                </h2>
+                <div className="h-px flex-1 bg-border/40" />
+            </div>
 
-            <div className="space-y-12">
-                {visibleExperiences.map((exp, index) => (
-                    <div key={index} className="group relative grid gap-4 md:grid-cols-8">
-                        <div className="md:col-span-2">
-                            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <div className="space-y-20">
+                {education.map((exp, index) => (
+                    <div key={index} className="grid gap-8 md:grid-cols-12 group">
+                        <div className="md:col-span-3">
+                            <p className="text-xs font-sans uppercase tracking-widest text-muted-foreground/60 group-hover:text-primary transition-colors">
                                 {exp.period}
                             </p>
                         </div>
 
-                        <div className="md:col-span-6">
-                            <h3 className="font-medium text-foreground">
-                                {exp.title}
-                            </h3>
-                            <h3 className="font-medium text-foreground">
-                                {exp.companyUrl ? (
-                                    <a
-                                        href={exp.companyUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 text-primary transition-colors hover:text-primary/80"
-                                    >
-                                        {exp.company}
-                                        <ExternalLink className="h-3 w-3" />
-                                    </a>
-                                ) : (
-                                    <span className="text-primary">{exp.company}</span>
-                                )}
-                            </h3>
+                        <div className="md:col-span-9 space-y-4">
+                            <div className="space-y-1">
+                                <h3 className="text-3xl font-serif text-foreground leading-tight">
+                                    {exp.title}
+                                </h3>
+                                <p className="text-lg font-serif italic text-muted-foreground">
+                                    {exp.company}
+                                </p>
+                            </div>
 
-                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                            <p className="text-muted-foreground leading-relaxed max-w-2xl">
                                 {exp.description}
                             </p>
 
-                            <div className="mt-4 flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2">
                                 {exp.technologies.map((tech) => (
                                     <span
                                         key={tech}
-                                        className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                                        className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium flex items-center gap-2"
                                     >
-                    {tech}
-                  </span>
+                                        <span className="h-1 w-1 bg-primary rounded-full" />
+                                        {tech}
+                                    </span>
                                 ))}
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
-
-            {hasMore && (
-                <div className="mt-8 flex justify-center">
-                    <Button
-                        variant="outline"
-                        onClick={() => setShowAll(!showAll)}
-                        className="gap-2"
-                    >
-                        {showAll ? "Show Less" : "Load More"}
-                        <ChevronDown className={`h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`} />
-                    </Button>
-                </div>
-            )}
         </section>
     );
 }
