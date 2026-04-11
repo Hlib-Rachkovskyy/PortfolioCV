@@ -19,30 +19,41 @@ export function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const sections = navItems.map((item) => ({
-        id: item.href.slice(1),
-        offset: document.getElementById(item.href.slice(1))?.offsetTop || 0,
-      }));
 
-      // Find the current section
-      // We look for the section that is closest to the top of the viewport
-      // but still consider an offset (e.g., 200px) so the change happens slightly before reaching the section
+      // 1. Map through items, but ONLY keep the ones that actually exist in the DOM
+      const sections = navItems
+          .map((item) => {
+            const element = document.getElementById(item.href.slice(1));
+            if (!element) return null;
+
+            return {
+              id: item.href.slice(1),
+              // Use getBoundingClientRect for accurate viewport measurements
+              offset: element.getBoundingClientRect().top + window.scrollY,
+            };
+          })
+          .filter(Boolean); // This removes any null values
+
+      if (sections.length === 0) return; // Do nothing if sections aren't rendered yet
+
+      // 2. Find the current section safely
       const currentSection = sections.reduce((acc, section) => {
         if (scrollPosition >= section.offset - 200) {
           return section.id;
         }
         return acc;
-      }, "home");
+      }, sections[0].id); // Default to the first section (home), not undefined
 
       setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+
+    // Wait a brief moment on initial load to ensure the rest of the page has painted
+    setTimeout(handleScroll, 100);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const scrollToSection = (href: string) => {
     const sectionId = href.slice(1);
     const element = document.getElementById(sectionId);
