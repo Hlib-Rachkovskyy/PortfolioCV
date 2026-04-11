@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Toaster } from "@/components/ui/sonner";
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
       {children}
       <Analytics />
+      <Toaster position="top-center" />
       </body>
       </html>
   )
