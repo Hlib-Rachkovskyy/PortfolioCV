@@ -16,7 +16,13 @@ export function IntroSection() {
         <span className="text-8xl font-sans text-primary/5 select-none">01</span>
       </div>
       
-      <div className="space-y-8">
+      <div className="space-y-12">
+        <h1 className="text-6xl lg:text-8xl font-sans font-black leading-[0.85] tracking-tighter text-foreground">
+          DESIGN.<br />
+          DEVELOP.<br />
+          <span className="text-primary">DELIVER.</span>
+        </h1>
+
         <div className="max-w-xl space-y-6 text-lg leading-relaxed text-muted-foreground font-sans">
           <p>
             I am a <span className="text-foreground font-medium">Software Developer</span> specializing in 
