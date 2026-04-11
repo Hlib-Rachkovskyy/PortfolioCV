@@ -57,12 +57,12 @@ export function Navigation() {
 
       <div className="space-y-12">
         <div className="space-y-2">
-          <h1 className="text-4xl font-serif leading-tight text-foreground">
+          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter">
             Hlib <br /> Rachkovskyy
           </h1>
           <div className="h-px w-12 bg-primary" />
-          <p className="text-xs uppercase tracking-widest text-muted-foreground">
-            Researcher & Engineer
+          <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
+            Software Engineer
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export function MobileNavigation() {
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between border-b border-border bg-background/80 px-6 py-4 backdrop-blur-md lg:hidden">
-        <h1 className="font-serif text-xl">H. Rachkovskyy</h1>
+        <h1 className="font-sans text-xl">H. Rachkovskyy</h1>
         <Button
           variant="ghost"
           size="icon"
@@ -152,7 +152,7 @@ export function MobileNavigation() {
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className="font-serif text-4xl hover:text-primary transition-colors"
+              className="font-sans text-4xl hover:text-primary transition-colors"
             >
               {item.label}
             </button>

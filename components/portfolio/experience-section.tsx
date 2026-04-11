@@ -53,7 +53,7 @@ export function ExperienceSection() {
 
             <div className="md:col-span-9 space-y-4">
               <div className="space-y-1">
-                <h3 className="text-3xl font-serif text-foreground leading-tight">
+                <h3 className="text-3xl font-sans text-foreground leading-tight">
                   {exp.title}
                 </h3>
                 <div className="flex items-center gap-2">
@@ -62,13 +62,13 @@ export function ExperienceSection() {
                             href={exp.companyUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-lg font-serif italic text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                            className="text-lg font-sans text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
                         >
                             {exp.company}
                             <ExternalLink size={14} />
                         </a>
                     ) : (
-                        <p className="text-lg font-serif italic text-muted-foreground">
+                        <p className="text-lg font-sans text-muted-foreground">
                             {exp.company}
                         </p>
                     )}

@@ -34,7 +34,7 @@ export function ProjectSection() {
   return (
     <section id="projects" className="relative py-24 border-t border-border/40">
       <div className="absolute -left-12 top-24 hidden lg:block">
-        <span className="text-8xl font-serif text-primary/5 select-none">05</span>
+        <span className="text-8xl font-sans text-primary/5 select-none">05</span>
       </div>
 
       <div className="flex items-center gap-4 mb-16">
@@ -53,7 +53,7 @@ export function ProjectSection() {
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
               <div className="space-y-6 max-w-xl">
                 <div className="space-y-2">
-                  <h3 className="text-4xl font-serif text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-3xl font-sans text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                   <div className="flex flex-wrap gap-x-6 gap-y-2">

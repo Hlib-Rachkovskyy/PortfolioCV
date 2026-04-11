@@ -27,7 +27,7 @@ export function AcademicSection() {
   return (
     <section id="academic" className="relative py-24 border-t border-border/40">
       <div className="absolute -left-12 top-24 hidden lg:block">
-        <span className="text-8xl font-serif text-primary/5 select-none">04</span>
+        <span className="text-8xl font-sans text-primary/5 select-none">04</span>
       </div>
 
       <div className="flex items-center gap-4 mb-16">
@@ -55,7 +55,7 @@ export function AcademicSection() {
                       {project.status}
                     </span>
                   </div>
-                  <h3 className="text-4xl font-serif text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-3xl font-sans text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                 </div>

@@ -44,10 +44,10 @@ export function EducationSection() {
 
                         <div className="md:col-span-9 space-y-4">
                             <div className="space-y-1">
-                                <h3 className="text-3xl font-serif text-foreground leading-tight">
+                                <h3 className="text-3xl font-sans text-foreground leading-tight">
                                     {exp.title}
                                 </h3>
-                                <p className="text-lg font-serif italic text-muted-foreground">
+                                <p className="text-lg font-sans text-muted-foreground">
                                     {exp.company}
                                 </p>
                             </div>
