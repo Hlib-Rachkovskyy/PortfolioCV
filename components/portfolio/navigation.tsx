@@ -5,21 +5,21 @@ import { Menu, X, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "#home" },
   { label: "Education", href: "#education" },
   { label: "Experience", href: "#experience" },
-  { label: "Academic Activity", href: "#academic" },
+  { label: "Academic Research", href: "#academic" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Navigation() {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.slice(1));
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -30,25 +30,26 @@ export function Navigation() {
             scrollPosition < offsetTop + offsetHeight
           ) {
             setActiveSection(section);
-            break;
           }
         }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.slice(1));
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const top = element.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
   return (
-    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-64 flex-col justify-between border-r border-border bg-background p-10 lg:flex">
+    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-72 flex-col justify-between border-r border-border bg-background p-10 lg:flex">
       {/* Technical Margin Anchor */}
       <div className="absolute right-0 top-0 h-full w-px bg-border">
         <div className="absolute top-[10%] right-[-4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
