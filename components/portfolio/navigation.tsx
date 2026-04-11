@@ -18,38 +18,43 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.slice(1));
-      const scrollPosition = window.scrollY + 150; // Increased offset for better detection
+      const scrollPosition = window.scrollY;
+      const sections = navItems.map((item) => ({
+        id: item.href.slice(1),
+        offset: document.getElementById(item.href.slice(1))?.offsetTop || 0,
+      }));
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
-            setActiveSection(section);
-          }
+      // Find the current section
+      // We look for the section that is closest to the top of the viewport
+      // but still consider an offset (e.g., 200px) so the change happens slightly before reaching the section
+      const currentSection = sections.reduce((acc, section) => {
+        if (scrollPosition >= section.offset - 200) {
+          return section.id;
         }
-      }
+        return acc;
+      }, "home");
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial check
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.slice(1));
+    const sectionId = href.slice(1);
+    const element = document.getElementById(sectionId);
     if (element) {
-      const top = element.getBoundingClientRect().top + window.pageYOffset - 100;
+      setActiveSection(sectionId);
+      const top = element.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
 
   return (
-    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-72 flex-col justify-between border-r border-border bg-background p-10 lg:flex">
+    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-80 flex-col justify-between border-r border-border bg-background p-10 lg:flex">
       {/* Technical Margin Anchor */}
       <div className="absolute right-0 top-0 h-full w-px bg-border">
         <div className="absolute top-[10%] right-[-4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
@@ -58,8 +63,8 @@ export function Navigation() {
 
       <div className="space-y-12">
         <div className="space-y-2">
-          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter">
-            Hlib <br /> Rachkovskyy
+          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap">
+            Hlib Rachkovskyy
           </h1>
           <div className="h-px w-12 bg-primary" />
           <p className="text-xs uppercase tracking-widest text-muted-foreground font-medium">

@@ -16,7 +16,7 @@ export default function PortfolioPage() {
       <Navigation />
       <MobileNavigation />
 
-      <main className="lg:ml-72">
+      <main className="lg:ml-80">
         <div className="mx-auto max-w-3xl px-6 py-12 lg:px-12">
           <FadeInSection>
             <IntroSection />
