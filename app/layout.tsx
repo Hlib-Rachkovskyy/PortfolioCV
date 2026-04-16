@@ -16,8 +16,8 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: 'Hlib Rachkovskyy — Researcher & Software Engineer',
-  description: 'A portfolio of high-craft software engineering and database research.',
+  title: 'Hlib Rachkovskyy — Software Engineer',
+  description: 'A portfolio of high-craft software engineering.',
   icons: {
     icon: '/light-icon.png',
   },
