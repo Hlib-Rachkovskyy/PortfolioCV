@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download, Copy } from "lucide-react";
+import {Copy, Cloud} from "lucide-react";
 import { toast } from "sonner";
 
 export function IntroSection() {
@@ -37,8 +37,8 @@ export function IntroSection() {
           <div className="flex flex-wrap gap-6 pt-4">
             <Button asChild size="lg" className="h-12 px-8 bg-primary text-primary-foreground hover:scale-[1.02] transition-transform rounded-none font-sans uppercase tracking-widest text-xs">
                 <a href="https://drive.google.com/file/d/127Qp10SKehf_8Szhh-JUKJvsTOAeygN0/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <Download className="mr-3 h-4 w-4" />
-                Get Resume
+                <Cloud className="mr-3 h-4 w-4" />
+                Open Resume
               </a>
             </Button>
             <Button variant="outline" size="lg" className="h-12 px-8 border-muted-foreground/20 hover:border-primary hover:bg-transparent hover:text-primary transition-all rounded-none font-sans uppercase tracking-widest text-xs" onClick={copyEmail}>
