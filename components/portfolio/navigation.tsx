@@ -68,7 +68,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-80 flex-col justify-between border-r border-border bg-background p-10 lg:flex">
+    <nav className="fixed left-0 top-0 z-50 hidden h-screen w-96 flex-col justify-between border-r border-border bg-background p-10 lg:flex">
       {/* Technical Margin Anchor */}
       <div className="absolute right-0 top-0 h-full w-px bg-border">
         <div className="absolute top-[10%] right-[-4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
@@ -77,7 +77,7 @@ export function Navigation() {
 
       <div className="space-y-12">
         <div className="space-y-2">
-          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap pr-8">
+          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap">
             Hlib Rachkovskyy
           </h1>
           <div className="h-px w-12 bg-primary" />
