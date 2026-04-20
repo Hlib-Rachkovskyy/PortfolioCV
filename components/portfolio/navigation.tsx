@@ -126,7 +126,7 @@ export function Navigation() {
         <Button asChild variant="outline" className="w-full border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover:text-primary transition-all rounded-none font-sans text-xs uppercase tracking-widest">
           <a href="https://drive.google.com/file/d/127Qp10SKehf_8Szhh-JUKJvsTOAeygN0/view?usp=sharing" target="_blank"
              rel="noopener noreferrer">
-            <Eye className="mr-2 h-3 w-3"/>
+            <ExternalLink className="mr-2 h-3 w-3"/>
             VIEW RESUME
           </a>
         </Button>
