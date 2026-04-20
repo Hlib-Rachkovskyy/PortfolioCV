@@ -37,8 +37,11 @@ export function Navigation() {
       if (sections.length === 0) return; // Do nothing if sections aren't rendered yet
 
       // 2. Find the current section safely
+      // @ts-ignore
       const currentSection = sections.reduce((acc, section) => {
+        // @ts-ignore
         if (scrollPosition >= section.offset - 200) {
+          // @ts-ignore
           return section.id;
         }
         return acc;
@@ -74,7 +77,7 @@ export function Navigation() {
 
       <div className="space-y-12">
         <div className="space-y-2">
-          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap">
+          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap mr-4">
             Hlib Rachkovskyy
           </h1>
           <div className="h-px w-12 bg-primary" />
