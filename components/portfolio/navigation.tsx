@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin, Mail, Cloud } from "lucide-react";
+import {Menu, X, Github, Linkedin, Mail, Eye} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -126,8 +126,8 @@ export function Navigation() {
         <Button asChild variant="outline" className="w-full border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover:text-primary transition-all rounded-none font-sans text-xs uppercase tracking-widest">
           <a href="https://drive.google.com/file/d/127Qp10SKehf_8Szhh-JUKJvsTOAeygN0/view?usp=sharing" target="_blank"
              rel="noopener noreferrer">
-            <Cloud className="mr-2 h-3 w-3"/>
-            OPEN RESUME
+            <Eye className="mr-2 h-3 w-3"/>
+            VIEW RESUME
           </a>
         </Button>
       </div>
