@@ -77,7 +77,7 @@ export function Navigation() {
 
       <div className="space-y-12">
         <div className="space-y-2">
-          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap mr-4">
+          <h1 className="text-4xl font-sans font-bold leading-tight text-foreground tracking-tighter whitespace-nowrap pr-8">
             Hlib Rachkovskyy
           </h1>
           <div className="h-px w-12 bg-primary" />
