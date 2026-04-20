@@ -36,7 +36,7 @@ export function IntroSection() {
 
           <div className="flex flex-wrap gap-6 pt-4">
             <Button asChild size="lg" className="h-12 px-8 bg-primary text-primary-foreground hover:scale-[1.02] transition-transform rounded-none font-sans uppercase tracking-widest text-xs">
-              <a href="/Hlib_Rachkovskyy_CV.pdf" target="_blank">
+              <a href="https://drive.google.com/file/d/1BCpF1y8kZx2O5obKVXb6bsd_zGDZFviX/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-3 h-4 w-4" />
                 Get Resume
               </a>
