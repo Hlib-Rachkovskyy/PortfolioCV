@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {Menu, X, Github, Linkedin, Mail, Eye} from "lucide-react";
+import {Menu, X, Github, Linkedin, Mail, Eye, ExternalLink} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
